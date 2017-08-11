@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 export default class Ethnicity extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       categories: ["White", "Hispanic, Latino, or Spanish Origin", "Black or African American", "Asian", "American Indian or Alaska Native", "Middles Eastern or North African", "Native Hawaiian or Other Pacific Islander", "Some other race, ethnicity, or origin"]
     }
