@@ -1,19 +1,37 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Router, Link } from 'react-router-dom'
+import React from ‘react’
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from ‘react-router-dom’
 
-import './App.css';
-import Ethnicity from './components/ethnicity'
+import ‘./App.css’;
+import Ethnicity from ‘./components/ethnicity’
 
+const Quiz = () => (
+   <form name=“demographics” >
+      <Ethnicity />
+      <input type=“submit” value=“Submit” />
+    </form>
+)
 
-class App extends Component {
-  render() {
-    return (
-      <form name="demographics" action="#">
-        <Ethnicity />
-        <input type="submit" />
-      </form>
-    );
-  }
-}
+const Results = () => (
+  <div> Results </div>
+)
 
-export default App;
+const BasicExample = () => (
+  <Router>
+    <div>
+      <ul>
+        <li><Link to=“/”>Quiz</Link></li>
+        <li><Link to=“/results”>Results</Link></li>
+      </ul>
+
+     <hr/>
+
+     <Route exact path=“/” component={Quiz}/>
+      <Route path=“/results” component={Results}/>
+    </div>
+  </Router>
+)
+export default BasicExample
